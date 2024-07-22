@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "nocoords",
+  "version": "${version}",
+  "name": "No Coordinates",
+  "description": "The mod for new versions of Minecraft, removes the information about the player's position and direction from the Debug Menu, adding it when holding a compass. Thus, the game becomes more challenging and interesting, and the usage of the compass increases.",
+  "authors": [
+    "TheFaceJD"
+  ],
+  "contact": {
+    "repo": "https://github.com/TheFaceJD/NoCoordinates"
+  },
+  "license": "MIT",
+  "icon": "assets/nocoords/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.thefacejd.nocoords.NoCoordinates"
+    ]
+  },
+  "mixins": [
+    "nocoords.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
