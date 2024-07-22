@@ -19,7 +19,7 @@ public class MinecraftClientMixin {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         if (player != null && !player.getWorld().getRegistryKey().equals(World.NETHER) && player.getMainHandStack().getItem().equals(Items.COMPASS)) {
             updateActionBar("%s %s %s %s".formatted(
-                    player.getFacing().toString().substring(0, 1).toUpperCase() + player.getFacing().toString().substring(1),
+                    player.getHorizontalFacing().toString().substring(0, 1).toUpperCase() + player.getHorizontalFacing().toString().substring(1),
                     player.getBlockX(), player.getBlockY(), player.getBlockZ()));
         }
     }
