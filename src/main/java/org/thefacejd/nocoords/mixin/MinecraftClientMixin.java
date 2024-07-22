@@ -17,7 +17,8 @@ public class MinecraftClientMixin {
     @Inject(method = "tick", at = @At("TAIL"))
     private void showCoordinates(CallbackInfo ci) {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
-        if (player != null && !player.getWorld().getRegistryKey().equals(World.NETHER) && player.getMainHandStack().getItem().equals(Items.COMPASS)) {
+        if (player != null && (player.getWorld().getRegistryKey().equals(World.OVERWORLD) && player.getMainHandStack().getItem().equals(Items.COMPASS)
+                || !player.getWorld().getRegistryKey().equals(World.OVERWORLD) && player.getMainHandStack().getItem().equals(Items.RECOVERY_COMPASS))) {
             updateActionBar("%s %s %s %s".formatted(
                     player.getHorizontalFacing().toString().substring(0, 1).toUpperCase() + player.getHorizontalFacing().toString().substring(1),
                     player.getBlockX(), player.getBlockY(), player.getBlockZ()));
