@@ -1,5 +1,5 @@
 # NoCoordinates
-[![Modrinth](https://img.shields.io/modrinth/dt/nocoordinates?style=flat-square&label=Modrinth&color=2318c05e)]([https://modrinth.com/mod/myzoom](https://modrinth.com/mod/nocoordinates))
+[![Modrinth](https://img.shields.io/modrinth/dt/nocoordinates?style=flat-square&label=Modrinth&color=2318c05e)](https://modrinth.com/mod/nocoordinates)
 
 The mod for new versions of Minecraft, removes the information about the player's position and direction from the Debug Menu, adding it when holding a compass.
 
