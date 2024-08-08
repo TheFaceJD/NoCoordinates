@@ -17,6 +17,17 @@ public class DebugHudMixin {
         debugInfo.removeIf(line -> line.contains("Block:"));
         debugInfo.removeIf(line -> line.contains("Chunk:"));
         debugInfo.removeIf(line -> line.contains("Facing:"));
+        debugInfo.removeIf(line -> line.contains("Chunk-relative:"));
+        debugInfo.removeIf(line -> line.contains("CH") && line.contains("SH"));
+        cir.setReturnValue(debugInfo);
+    }
+
+    @Inject(method = "getRightText", at = @At("RETURN"), cancellable = true)
+    private void removeRightLines(CallbackInfoReturnable<List<String>> cir) {
+        List<String> debugInfo = cir.getReturnValue();
+        debugInfo.removeIf(line -> line.contains("Targeted Block:"));
+        debugInfo.removeIf(line -> line.contains("Targeted Fluid:"));
+        cir.setReturnValue(debugInfo);
         cir.setReturnValue(debugInfo);
     }
 }
