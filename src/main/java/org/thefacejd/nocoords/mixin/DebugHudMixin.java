@@ -28,6 +28,5 @@ public class DebugHudMixin {
         debugInfo.removeIf(line -> line.contains("Targeted Block:"));
         debugInfo.removeIf(line -> line.contains("Targeted Fluid:"));
         cir.setReturnValue(debugInfo);
-        cir.setReturnValue(debugInfo);
     }
 }
