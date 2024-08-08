@@ -8,7 +8,9 @@
     "TheFaceJD"
   ],
   "contact": {
-    "repo": "https://github.com/TheFaceJD/NoCoordinates"
+    "homepage": "https://modrinth.com/mod/nocoordinates",
+    "sources": "https://github.com/TheFaceJD/NoCoordinates",
+    "issues": "https://github.com/TheFaceJD/NoCoordinates/issues"
   },
   "license": "MIT",
   "icon": "assets/nocoords/icon.png",
@@ -22,8 +24,8 @@
     "nocoords.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.15.11",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.21 <=1.21.6"
   }
 }

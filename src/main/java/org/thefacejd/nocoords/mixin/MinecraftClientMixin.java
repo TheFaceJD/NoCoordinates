@@ -4,6 +4,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,7 +22,7 @@ public class MinecraftClientMixin {
         if (player != null && (player.getWorld().getRegistryKey().equals(World.OVERWORLD) && onHands(player, Items.COMPASS)
                 || !player.getWorld().getRegistryKey().equals(World.OVERWORLD) && onHands(player, Items.RECOVERY_COMPASS))) {
             updateActionBar("%s %s %s %s".formatted(
-                    player.getFacing().toString().substring(0, 1).toUpperCase() + player.getFacing().toString().substring(1),
+                    getSide(player).getString(),
                     player.getBlockX(), player.getBlockY(), player.getBlockZ()));
         }
     }
@@ -34,5 +35,10 @@ public class MinecraftClientMixin {
     @Unique
     private boolean onHands(ClientPlayerEntity player, Item item) {
         return player.getMainHandStack().getItem().equals(item) || player.getOffHandStack().getItem().equals(item);
+    }
+
+    @Unique
+    private MutableText getSide(ClientPlayerEntity player) {
+        return Text.translatable("sides." + player.getFacing().toString());
     }
 }
